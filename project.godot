@@ -29,6 +29,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/lazy-fx/built-in/fx/node2d/position/FxPositionXResource.gd"
 }, {
+"base": "Reference",
+"class": "FxPulse",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/built-in/targets/lazy-fx-sprite/fx/pulse/FxPulse.gd"
+}, {
+"base": "Resource",
+"class": "FxPulseResource",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/built-in/targets/lazy-fx-sprite/fx/pulse/FxPulseResource.gd"
+}, {
 "base": "Node",
 "class": "FxRotation",
 "language": "GDScript",
@@ -89,6 +99,8 @@ _global_script_class_icons={
 "FxComposedResource": "",
 "FxPositionX": "",
 "FxPositionXResource": "",
+"FxPulse": "",
+"FxPulseResource": "",
 "FxRotation": "",
 "FxRotationResource": "",
 "FxUtils": "",
@@ -109,7 +121,7 @@ config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/lazy-fx/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/imrp/plugin.cfg", "res://addons/lazy-fx/plugin.cfg" )
 
 [gui]
 
