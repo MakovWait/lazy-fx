@@ -8,6 +8,100 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "FxComposed",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/fx/FxComposed.gd"
+}, {
+"base": "Resource",
+"class": "FxComposedResource",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/built-in/fx/FxComposedResource.gd"
+}, {
+"base": "Node",
+"class": "FxPositionX",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/built-in/fx/node2d/position/FxPositionX.gd"
+}, {
+"base": "Resource",
+"class": "FxPositionXResource",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/built-in/fx/node2d/position/FxPositionXResource.gd"
+}, {
+"base": "Node",
+"class": "FxRotation",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/built-in/fx/node2d/rotation/FxRotation.gd"
+}, {
+"base": "Resource",
+"class": "FxRotationResource",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/built-in/fx/node2d/rotation/FxRotationResource.gd"
+}, {
+"base": "Reference",
+"class": "FxUtils",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/Utils.gd"
+}, {
+"base": "Reference",
+"class": "LazyAnimation",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/animations/LazyAnimation.gd"
+}, {
+"base": "Reference",
+"class": "LazyAnimationEmpty",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/animations/LazyAnimationEmpty.gd"
+}, {
+"base": "Node",
+"class": "LazyAnimationSourceBase",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/player/LazyAnimationSourceBase.gd"
+}, {
+"base": "Reference",
+"class": "Scalar",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/scalars/Scalar.gd"
+}, {
+"base": "Scalar",
+"class": "ScalarFixed",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/scalars/ScalarFixed.gd"
+}, {
+"base": "Scalar",
+"class": "ScalarRef",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/scalars/ScalarRef.gd"
+}, {
+"base": "Reference",
+"class": "StepLerp",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/steps/StepLerp.gd"
+}, {
+"base": "Reference",
+"class": "StepPingPongTime",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/steps/StepPingPongTime.gd"
+} ]
+_global_script_class_icons={
+"FxComposed": "",
+"FxComposedResource": "",
+"FxPositionX": "",
+"FxPositionXResource": "",
+"FxRotation": "",
+"FxRotationResource": "",
+"FxUtils": "",
+"LazyAnimation": "",
+"LazyAnimationEmpty": "",
+"LazyAnimationSourceBase": "",
+"Scalar": "",
+"ScalarFixed": "",
+"ScalarRef": "",
+"StepLerp": "",
+"StepPingPongTime": ""
+}
+
 [application]
 
 config/name="lazy-fx"
