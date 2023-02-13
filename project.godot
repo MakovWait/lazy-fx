@@ -50,6 +50,16 @@ _global_script_classes=[ {
 "path": "res://addons/lazy-fx/built-in/fx/node2d/rotation/FxRotationResource.gd"
 }, {
 "base": "Reference",
+"class": "FxShake",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/built-in/fx/node2d/shake/FxShake.gd"
+}, {
+"base": "Resource",
+"class": "FxShakeResource",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/built-in/fx/node2d/shake/FxShakeResource.gd"
+}, {
+"base": "Reference",
 "class": "FxUtils",
 "language": "GDScript",
 "path": "res://addons/lazy-fx/core/Utils.gd"
@@ -103,6 +113,8 @@ _global_script_class_icons={
 "FxPulseResource": "",
 "FxRotation": "",
 "FxRotationResource": "",
+"FxShake": "",
+"FxShakeResource": "",
 "FxUtils": "",
 "LazyAnimation": "",
 "LazyAnimationEmpty": "",
