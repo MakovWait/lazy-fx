@@ -19,15 +19,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/lazy-fx/built-in/fx/FxComposedResource.gd"
 }, {
-"base": "Node",
-"class": "FxPositionX",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/built-in/fx/node2d/position/FxPositionX.gd"
-}, {
 "base": "Resource",
-"class": "FxPositionXResource",
+"class": "FxPositionResource",
 "language": "GDScript",
-"path": "res://addons/lazy-fx/built-in/fx/node2d/position/FxPositionXResource.gd"
+"path": "res://addons/lazy-fx/built-in/fx/node2d/position/FxPositionResource.gd"
 }, {
 "base": "Reference",
 "class": "FxPulse",
@@ -39,15 +34,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/lazy-fx/built-in/targets/lazy-fx-sprite/fx/pulse/FxPulseResource.gd"
 }, {
-"base": "Node",
-"class": "FxRotation",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/built-in/fx/node2d/rotation/FxRotation.gd"
-}, {
 "base": "Resource",
 "class": "FxRotationResource",
 "language": "GDScript",
 "path": "res://addons/lazy-fx/built-in/fx/node2d/rotation/FxRotationResource.gd"
+}, {
+"base": "Reference",
+"class": "FxSetLerpValue",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/fx/FxSetLerpValue.gd"
 }, {
 "base": "Reference",
 "class": "FxShake",
@@ -85,6 +80,11 @@ _global_script_classes=[ {
 "path": "res://addons/lazy-fx/core/scalars/Scalar.gd"
 }, {
 "base": "Scalar",
+"class": "ScalarDeg2Rad",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/scalars/ScalarDeg2Rad.gd"
+}, {
+"base": "Scalar",
 "class": "ScalarFixed",
 "language": "GDScript",
 "path": "res://addons/lazy-fx/core/scalars/ScalarFixed.gd"
@@ -107,12 +107,11 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "FxComposed": "",
 "FxComposedResource": "",
-"FxPositionX": "",
-"FxPositionXResource": "",
+"FxPositionResource": "",
 "FxPulse": "",
 "FxPulseResource": "",
-"FxRotation": "",
 "FxRotationResource": "",
+"FxSetLerpValue": "",
 "FxShake": "",
 "FxShakeResource": "",
 "FxUtils": "",
@@ -120,6 +119,7 @@ _global_script_class_icons={
 "LazyAnimationEmpty": "",
 "LazyAnimationSourceBase": "",
 "Scalar": "",
+"ScalarDeg2Rad": "",
 "ScalarFixed": "",
 "ScalarRef": "",
 "StepLerp": "",
@@ -130,6 +130,12 @@ _global_script_class_icons={
 
 config/name="lazy-fx"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=512
+window/size/height=300
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
