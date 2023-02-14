@@ -10,7 +10,7 @@ var _duration
 func _init(fx, step, duration):
 	self._fx = fx
 	self._step = step
-	self._duration = duration
+	self._duration = FxUtils.scalar_of(duration)
 
 
 func validate(target, errors):
@@ -18,4 +18,4 @@ func validate(target, errors):
 
 
 func play(target, time):
-	_fx.apply(target, _step.value(time, _duration))
+	_fx.apply(target, _step.value(time, _duration.value()))
