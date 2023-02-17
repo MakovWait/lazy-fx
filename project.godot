@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "FxBurstScale",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/fx/resources/FxBurstScale.gd"
+}, {
+"base": "Reference",
+"class": "FxBurstValue",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/fx/FxBurstValue.gd"
+}, {
 "base": "Reference",
 "class": "FxComposed",
 "language": "GDScript",
@@ -18,6 +28,11 @@ _global_script_classes=[ {
 "class": "FxComposedResource",
 "language": "GDScript",
 "path": "res://addons/lazy-fx/fx/resources/FxComposedResource.gd"
+}, {
+"base": "Reference",
+"class": "FxEmpty",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/fx/FxEmpty.gd"
 }, {
 "base": "Resource",
 "class": "FxPositionResource",
@@ -65,14 +80,34 @@ _global_script_classes=[ {
 "path": "res://addons/lazy-fx/core/animations/LazyAnimation.gd"
 }, {
 "base": "Reference",
+"class": "LazyAnimationComposed",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/animations/LazyAnimationComposed.gd"
+}, {
+"base": "Resource",
+"class": "LazyAnimationComposedResource",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/player/LazyAnimationComposedResource.gd"
+}, {
+"base": "Reference",
 "class": "LazyAnimationEmpty",
 "language": "GDScript",
 "path": "res://addons/lazy-fx/core/animations/LazyAnimationEmpty.gd"
+}, {
+"base": "Resource",
+"class": "LazyAnimationResource",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/player/LazyAnimationResource.gd"
 }, {
 "base": "Node",
 "class": "LazyAnimationSourceBase",
 "language": "GDScript",
 "path": "res://addons/lazy-fx/player/LazyAnimationSourceBase.gd"
+}, {
+"base": "Resource",
+"class": "LazyStepResource",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/LazyStepResource.gd"
 }, {
 "base": "Reference",
 "class": "Scalar",
@@ -95,6 +130,11 @@ _global_script_classes=[ {
 "path": "res://addons/lazy-fx/core/scalars/ScalarRef.gd"
 }, {
 "base": "Reference",
+"class": "StepContinuousTime",
+"language": "GDScript",
+"path": "res://addons/lazy-fx/core/steps/StepContinuousTime.gd"
+}, {
+"base": "Reference",
 "class": "StepLerp",
 "language": "GDScript",
 "path": "res://addons/lazy-fx/core/steps/StepLerp.gd"
@@ -105,8 +145,11 @@ _global_script_classes=[ {
 "path": "res://addons/lazy-fx/core/steps/StepPingPongTime.gd"
 } ]
 _global_script_class_icons={
+"FxBurstScale": "",
+"FxBurstValue": "",
 "FxComposed": "",
 "FxComposedResource": "",
+"FxEmpty": "",
 "FxPositionResource": "",
 "FxPulse": "",
 "FxPulseResource": "",
@@ -116,12 +159,17 @@ _global_script_class_icons={
 "FxShakeResource": "",
 "FxUtils": "",
 "LazyAnimation": "",
+"LazyAnimationComposed": "",
+"LazyAnimationComposedResource": "",
 "LazyAnimationEmpty": "",
+"LazyAnimationResource": "",
 "LazyAnimationSourceBase": "",
+"LazyStepResource": "",
 "Scalar": "",
 "ScalarDeg2Rad": "",
 "ScalarFixed": "",
 "ScalarRef": "",
+"StepContinuousTime": "",
 "StepLerp": "",
 "StepPingPongTime": ""
 }
