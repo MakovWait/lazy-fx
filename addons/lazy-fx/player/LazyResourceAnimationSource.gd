@@ -1,7 +1,7 @@
 tool
 extends LazyAnimationSourceBase
 
-
+export var _reset : bool setget _editor_trigger_reset
 export var _resource : Resource setget _set_resource
 
 
@@ -29,3 +29,8 @@ func _set_resource(value):
 func _on_resource_internals_changed():
 	if is_inside_tree():
 		_add_to_player()
+
+
+func _editor_trigger_reset(value):
+	if _player:
+		_player.reset()

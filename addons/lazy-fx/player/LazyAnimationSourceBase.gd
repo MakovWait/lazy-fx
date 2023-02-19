@@ -18,6 +18,8 @@ func _exit_tree():
 
 func _add_to_player():
 	_player.add(_name, _animation())
+	if Engine.editor_hint:
+		_player.reset()
 
 
 func _animation():

@@ -2,13 +2,16 @@ tool
 class_name LazyStepResource
 extends Resource
 
+enum EasingNames {
+	Linear,
+}
 
-var _easings = {
-	"Linear": StepLerp
+const _easings = {
+	EasingNames.Linear: StepLerp
 }
 
 
-var _time_steps = {
+const _time_steps = {
 	"Ping Pong": StepPingPongTime,
 	"Continuous": StepContinuousTime
 }

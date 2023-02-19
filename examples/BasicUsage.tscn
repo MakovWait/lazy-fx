@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://addons/lazy-fx/targets/lazy-fx-sprite/lazy_fx.gdshader" type="Shader" id=2]
@@ -6,9 +6,8 @@
 [ext_resource path="res://addons/lazy-fx/player/LazyAnimationPlayer.gd" type="Script" id=4]
 [ext_resource path="res://addons/lazy-fx/player/AutoPlay.gd" type="Script" id=5]
 [ext_resource path="res://addons/lazy-fx/player/LazyResourceAnimationSource.gd" type="Script" id=6]
-[ext_resource path="res://addons/lazy-fx/player/LazyAnimationResource.gd" type="Script" id=7]
-[ext_resource path="res://addons/lazy-fx/LazyStepResource.gd" type="Script" id=8]
-[ext_resource path="res://addons/lazy-fx/fx/resources/FxRotationResource.gd" type="Script" id=10]
+[ext_resource path="res://addons/lazy-fx/resources/LazyAnimationBurstResource.gd" type="Script" id=7]
+[ext_resource path="res://addons/lazy-fx/resources/FxShakeResource.gd" type="Script" id=8]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
@@ -16,28 +15,24 @@ shader_param/skew = Vector2( 0, 0 )
 shader_param/blink_progress = 0.0
 shader_param/blink_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="Resource" id=2]
-script = ExtResource( 10 )
-_display_name = "rotation"
-_from = -10.0
-_to = 10.0
-
 [sub_resource type="Resource" id=4]
 script = ExtResource( 8 )
-_time = "Ping Pong"
-_easing = "Linear"
+_display_name = "shake"
+_intensity = 10.0
+_smooth = 0.67
+_rotational = 0.1
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 7 )
-_duration = 0.3
-_fx = SubResource( 2 )
-_step = SubResource( 4 )
+_duration = 10.0
+_wobble = 0.0
+_fx = SubResource( 4 )
 
 [node name="BasicUsage" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 1 )
-rotation = 0.0543249
+position = Vector2( -5.17766e-06, -5.97836e-06 )
 texture = ExtResource( 1 )
 script = ExtResource( 3 )
 
@@ -49,7 +44,7 @@ script = ExtResource( 6 )
 _name = "default"
 _resource = SubResource( 3 )
 
-[node name="AutoPlay" type="Node" parent="Sprite/LazyAnimationPlayer"]
+[node name="AutoPLay" type="Node" parent="Sprite/LazyAnimationPlayer"]
 script = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
