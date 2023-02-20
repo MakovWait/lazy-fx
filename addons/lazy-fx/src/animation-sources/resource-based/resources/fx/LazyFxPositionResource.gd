@@ -1,5 +1,5 @@
 tool
-class_name FxPositionResource
+class_name LazyFxPositionResource
 extends Resource
 
 export var _display_name = "position"

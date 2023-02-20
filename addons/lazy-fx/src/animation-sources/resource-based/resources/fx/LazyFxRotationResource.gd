@@ -1,5 +1,5 @@
 tool
-class_name FxRotationResource
+class_name LazyFxRotationResource
 extends Resource
 
 export var _display_name = "rotation"

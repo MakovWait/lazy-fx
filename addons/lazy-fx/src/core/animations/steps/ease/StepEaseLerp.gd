@@ -1,4 +1,4 @@
-class_name StepLerp
+class_name StepEaseLerp
 extends Reference
 
 

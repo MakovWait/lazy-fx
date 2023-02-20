@@ -1,4 +1,4 @@
-class_name StepContinuousTime
+class_name StepTimeContinuous
 extends Reference
 
 

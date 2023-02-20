@@ -1,4 +1,4 @@
-class_name StepPingPongTime
+class_name StepTimePingPong
 extends Reference
 
 

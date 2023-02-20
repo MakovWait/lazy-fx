@@ -2,12 +2,12 @@ tool
 class_name LazyStepResource
 extends Resource
 
-const ease_functions = preload("res://addons/lazy-fx/ease/Ease.gd")
+const ease_functions = preload("res://addons/lazy-fx/deps/ease/Ease.gd")
 
 
 const _time_steps = {
-	"Ping Pong": StepPingPongTime,
-	"Continuous": StepContinuousTime
+	"Ping Pong": StepTimePingPong,
+	"Continuous": StepTimeContinuous
 }
 
 
@@ -55,7 +55,7 @@ func _time_step(easing):
 
 func _easing_step():
 	if _easing == 'Linear':
-		return StepLerp.new()
+		return StepEaseLerp.new()
 	else:
 		var ease_name = _easing[0].to_lower() + _easing.substr(1)
 		return StepEaseFuncRef.new(funcref(ease_functions, ease_name))

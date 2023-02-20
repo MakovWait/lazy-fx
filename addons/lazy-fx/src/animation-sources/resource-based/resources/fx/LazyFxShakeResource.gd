@@ -1,5 +1,5 @@
 tool
-class_name FxShakeResource
+class_name LazyFxShakeResource
 extends Resource
 
 

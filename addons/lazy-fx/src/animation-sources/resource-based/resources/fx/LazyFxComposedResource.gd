@@ -1,5 +1,5 @@
 tool
-class_name FxComposedResource
+class_name LazyFxComposedResource
 extends Resource
 
 

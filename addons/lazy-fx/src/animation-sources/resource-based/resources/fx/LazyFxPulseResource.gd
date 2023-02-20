@@ -1,5 +1,5 @@
 tool
-class_name FxPulseResource
+class_name LazyFxPulseResource
 extends Resource
 
 export var _display_name = "pulse"

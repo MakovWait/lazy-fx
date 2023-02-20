@@ -70,4 +70,3 @@ func _update_processing():
 		set_process(_preview)
 	else:
 		set_process(true)
-

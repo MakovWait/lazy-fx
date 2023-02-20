@@ -17,7 +17,7 @@ func animation():
 	
 	var step
 	if _step_is_invalid(_step):
-		step = StepPingPongTime.new(StepLerp.new())
+		step = StepTimePingPong.new(StepEaseLerp.new())
 	else:
 		step = _step.step()
 	
