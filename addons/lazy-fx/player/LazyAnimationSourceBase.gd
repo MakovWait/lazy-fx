@@ -13,15 +13,14 @@ func _ready():
 
 
 func _exit_tree():
-	_player.remove(_name)
+	_player.remove(self._name)
 
 
 func _add_to_player():
-	_player.add(_name, _animation())
+	_player.add(self._name, _animation())
 	if Engine.editor_hint:
 		_player.reset()
 
 
 func _animation():
 	return LazyAnimationEmpty.new()
-

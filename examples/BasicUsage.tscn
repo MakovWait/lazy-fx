@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://addons/lazy-fx/targets/lazy-fx-sprite/lazy_fx.gdshader" type="Shader" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://addons/lazy-fx/player/LazyAnimationPlayer.gd" type="Script" id=4]
 [ext_resource path="res://addons/lazy-fx/player/AutoPlay.gd" type="Script" id=5]
 [ext_resource path="res://addons/lazy-fx/player/LazyResourceAnimationSource.gd" type="Script" id=6]
-[ext_resource path="res://addons/lazy-fx/resources/LazyAnimationBurstResource.gd" type="Script" id=7]
-[ext_resource path="res://addons/lazy-fx/resources/FxShakeResource.gd" type="Script" id=8]
+[ext_resource path="res://addons/lazy-fx/resources/fx/FxPositionResource.gd" type="Script" id=7]
+[ext_resource path="res://addons/lazy-fx/resources/animation/LazyAnimationTimedResource.gd" type="Script" id=8]
+[ext_resource path="res://addons/lazy-fx/resources/step/LazyStepResource.gd" type="Script" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
@@ -15,34 +16,40 @@ shader_param/skew = Vector2( 0, 0 )
 shader_param/blink_progress = 0.0
 shader_param/blink_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="Resource" id=4]
-script = ExtResource( 8 )
-_display_name = "shake"
-_intensity = 10.0
-_smooth = 0.67
-_rotational = 0.1
+[sub_resource type="Resource" id=2]
+script = ExtResource( 7 )
+_display_name = "position"
+_direction = "x"
+_from = -10.0
+_to = 0.0
 
 [sub_resource type="Resource" id=3]
-script = ExtResource( 7 )
-_duration = 10.0
-_wobble = 0.0
-_fx = SubResource( 4 )
+script = ExtResource( 9 )
+_time = "Ping Pong"
+_easing = "Linear"
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 8 )
+_duration = 1.0
+_fx = SubResource( 2 )
+_step = SubResource( 3 )
 
 [node name="BasicUsage" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 1 )
-position = Vector2( -5.17766e-06, -5.97836e-06 )
+position = Vector2( -8.77017, 0 )
 texture = ExtResource( 1 )
 script = ExtResource( 3 )
 
 [node name="LazyAnimationPlayer" type="Node" parent="Sprite"]
 script = ExtResource( 4 )
+_preview = true
 
-[node name="Animation" type="Node" parent="Sprite/LazyAnimationPlayer"]
+[node name="default" type="Node" parent="Sprite/LazyAnimationPlayer"]
 script = ExtResource( 6 )
 _name = "default"
-_resource = SubResource( 3 )
+_resource = SubResource( 4 )
 
 [node name="AutoPLay" type="Node" parent="Sprite/LazyAnimationPlayer"]
 script = ExtResource( 5 )

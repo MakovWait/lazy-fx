@@ -12,6 +12,10 @@ var default_fields = {
 }
 
 
+func _ready():
+	reset()
+
+
 func reset():
 	for field in default_fields.keys():
 		set_fx_value(field, default_fields[field])

@@ -1,5 +1,5 @@
 tool
-class_name LazyAnimationResource
+class_name LazyAnimationTimedResource
 extends Resource
 
 

@@ -5,6 +5,16 @@ export var _reset : bool setget _editor_trigger_reset
 export var _resource : Resource setget _set_resource
 
 
+#func _ready():
+#	set_process(false)
+#	set_physics_process(false)
+#	set_process_input(false)
+#	set_process_unhandled_input(false)
+#	set_process_internal(false)
+#	set_process_unhandled_key_input(false)
+#	set_physics_process_internal(false)
+
+
 func _animation():
 	if _resource_is_invalid(_resource):
 		return LazyAnimationEmpty.new()
