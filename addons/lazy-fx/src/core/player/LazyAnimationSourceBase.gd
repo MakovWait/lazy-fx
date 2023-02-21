@@ -14,6 +14,11 @@ func _ready():
 	_add_to_player()
 
 
+func _enter_tree():
+	if _player:
+		_add_to_player()
+
+
 func _exit_tree():
 	_player.remove(name)
 

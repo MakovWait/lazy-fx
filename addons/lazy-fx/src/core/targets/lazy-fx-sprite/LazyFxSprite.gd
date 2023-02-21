@@ -1,6 +1,7 @@
 tool
 extends Sprite
 
+var shader = preload("res://addons/lazy-fx/src/core/targets/lazy-fx-sprite/lazy_fx.gdshader")
 
 var default_fields = {
 	'position': Vector2.ZERO,
@@ -13,7 +14,15 @@ var default_fields = {
 
 
 func _ready():
+	if not material:
+		var lazy_material = ShaderMaterial.new()
+		lazy_material.shader = shader
+		material = lazy_material
 	reset()
+
+
+func _enter_tree():
+	call_deferred("reset")
 
 
 func reset():
