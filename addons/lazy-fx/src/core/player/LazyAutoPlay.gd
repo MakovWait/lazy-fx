@@ -26,14 +26,10 @@ func _set(property, value):
 
 
 func _get_property_list():
-	var keys = get_node(_player_path).animation_names()
-	var hint_string = ''
-	for x in keys:
-		hint_string += x + ','
 	return [{
 		'name': '_animation_name',
 		'type': TYPE_STRING,
-		'hint_string': hint_string.substr(0, hint_string.length() - 1),
+		'hint_string': get_node(_player_path).animation_names().join(','),
 		'hint': PROPERTY_HINT_ENUM
 	}]
 

@@ -46,7 +46,7 @@ func has_animation(name):
 
 
 func animation_names():
-	return _animations.keys()
+	return PoolStringArray(_animations.keys())
 
 
 func change_preview_mode(value):
@@ -68,10 +68,6 @@ func play(name):
 	reset()
 
 
-#func stop():
-#	_
-
-
 func play_external(time):
 	_active_animation().play(_target, time)
 
@@ -90,13 +86,21 @@ func _process(delta):
 func _get(property):
 	if property == 'debug/active_animation':
 		return _active_animation_name
+	if property == 'debug/animations':
+		return self.animation_names().join(',')
 
 
 func _get_property_list():
-	return [{
+	var result = []
+	result.push_back({
 		'name': 'debug/active_animation',
 		'type': TYPE_STRING
-	}]
+	})
+	result.push_back({
+		'name': 'debug/animations',
+		'type': TYPE_STRING
+	})
+	return result
 
 
 func _active_animation():

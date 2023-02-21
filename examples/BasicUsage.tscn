@@ -62,7 +62,7 @@ script = ExtResource( 3 )
 
 [node name="LazyAnimationPlayer" type="Node" parent="Sprite"]
 script = ExtResource( 4 )
-debug/active_animation = "default"
+debug/active_animation = null
 
 [node name="default" type="Node" parent="Sprite/LazyAnimationPlayer"]
 script = ExtResource( 6 )
@@ -74,7 +74,7 @@ _animation_name = "default"
 
 [node name="LazyAnimationPlayer2" type="Node" parent="Sprite"]
 script = ExtResource( 4 )
-debug/active_animation = "111"
+debug/active_animation = null
 
 [node name="wobble" type="Node" parent="Sprite/LazyAnimationPlayer2"]
 script = ExtResource( 6 )
