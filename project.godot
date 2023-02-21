@@ -69,11 +69,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/lazy-fx/src/core/animations/LazyAnimationEmpty.gd"
 }, {
-"base": "Reference",
-"class": "LazyAnimationSourceBase",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/player/LazyAnimationSourceBase.gd"
-}, {
 "base": "Resource",
 "class": "LazyAnimationTimedResource",
 "language": "GDScript",
@@ -167,7 +162,6 @@ _global_script_class_icons={
 "LazyAnimationComposed": "",
 "LazyAnimationComposedResource": "",
 "LazyAnimationEmpty": "",
-"LazyAnimationSourceBase": "",
 "LazyAnimationTimedResource": "",
 "LazyFxComposedResource": "",
 "LazyFxPositionResource": "",

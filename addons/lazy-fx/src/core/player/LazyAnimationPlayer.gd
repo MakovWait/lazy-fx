@@ -11,7 +11,7 @@ var _animation_empty = LazyAnimationEmpty.new()
 
 var _time = 0.0
 var _animations = {}
-var _action_animation_name
+var _active_animation_name
 
 
 func _ready():
@@ -33,13 +33,43 @@ func reset():
 		_target.reset()
 
 
-func play(name):
+func is_in_preview_mode():
+	return _preview
+
+
+func active_animation_is(name):
+	return name == _active_animation_name
+
+
+func has_animation(name):
+	return _animations.has(name)
+
+
+func animation_names():
+	return _animations.keys()
+
+
+func change_preview_mode(value):
+	self._preview = value
+
+
+func check_animation_is_registered(name):
 	if not _animations.has(name):
 		printerr(
-			"Animation '%s' was not found. Current animations are: %s" % [name, _animations.keys()]
+			"%s error: Animation '%s' was not found. Current animations are: %s" % [self.name, name, _animations.keys()]
 		)
-	_action_animation_name = name
+
+
+func play(name):
+	if Engine.editor_hint:
+		update_configuration_warning()
+	check_animation_is_registered(name)
+	_active_animation_name = name
 	reset()
+
+
+#func stop():
+#	_
 
 
 func play_external(time):
@@ -51,9 +81,27 @@ func _process(delta):
 	_time += delta
 
 
+#func _set(property, value):
+#	if property == 'debug/active_animation':
+#		return false
+#	return false
+
+
+func _get(property):
+	if property == 'debug/active_animation':
+		return _active_animation_name
+
+
+func _get_property_list():
+	return [{
+		'name': 'debug/active_animation',
+		'type': TYPE_STRING
+	}]
+
+
 func _active_animation():
-	if _animations.has(_action_animation_name):
-		return _animations[_action_animation_name]
+	if _animations.has(_active_animation_name):
+		return _animations[_active_animation_name]
 	else:
 		return _animation_empty
 
@@ -63,6 +111,7 @@ func _set_preview(value):
 	_update_processing()
 	if _target:
 		_target.reset()
+	update_configuration_warning()
 
 
 func _update_processing():
@@ -70,3 +119,9 @@ func _update_processing():
 		set_process(_preview)
 	else:
 		set_process(true)
+
+
+func _get_configuration_warning():
+	if _preview:
+		return 'Preview mode is enabled. Current animation is %s' % _active_animation_name
+	return ''

@@ -1,18 +1,8 @@
 tool
-extends LazyAnimationSourceBase
+extends "res://addons/lazy-fx/src/core/player/LazyAnimationSourceBase.gd"
 
 export var _reset : bool setget _editor_trigger_reset
 export var _resource : Resource setget _set_resource
-
-
-#func _ready():
-#	set_process(false)
-#	set_physics_process(false)
-#	set_process_input(false)
-#	set_process_unhandled_input(false)
-#	set_process_internal(false)
-#	set_process_unhandled_key_input(false)
-#	set_physics_process_internal(false)
 
 
 func _animation():
@@ -44,3 +34,8 @@ func _on_resource_internals_changed():
 func _editor_trigger_reset(value):
 	if _player:
 		_player.reset()
+		if not _player.is_in_preview_mode():
+			push_warning("Target Player {%s} is not in preview mode" % _player.name)
+		if not _player.active_animation_is(self.name):
+			push_warning("Current animation {%s} is not active in {%s}" % [self.name, _player.name])
+
