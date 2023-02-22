@@ -1,20 +1,34 @@
 class_name StepEaseOutElastic
 extends Reference
 
+var _period
+var _amplitude
 
-var _wobble
 
-
-func _init(wobble):
-	self._wobble = wobble
+func _init(period, amplitude):
+	self._period = FxUtils.scalar_of(period)
+	self._amplitude = FxUtils.scalar_of(amplitude)
 
 
 func value(time, duration):
-	return _ease_out_elastic(time / duration, 0, 1, _wobble.value())
+	return _ease_out_elastic(time / duration, 0, 1, 1, _amplitude.value(), _period.value())
 
 
-func _ease_out_elastic(x: float, offset: float=0, length: float=1, wobble: float=10) -> float:
-	x -= offset
-	var length_trans = 10 / length
-	var c4 = (2 * PI) / 3
-	return (0.0 if x < 0 else (1.0 if x > length else pow(2, -length_trans * x) * sin((x * wobble - 0.75) * c4) + 1))
+func _ease_out_elastic(t: float, b: float, c: float, d: float, a: float = 0, p: float = 0) -> float:
+	if t == 0:
+		return b
+	t = t / d
+	if t == 1:
+		return b + c
+		
+	if p == 0:
+		p = d * 0.3
+
+	var s: float
+	if a == 0:
+		a = c
+		s = p / 4
+	else:
+		s = p / (2 * PI) * asin(c / a)
+
+	return a * pow(2, -10 * t) * sin((t * d - s) * (2 * PI) / p) + c + b

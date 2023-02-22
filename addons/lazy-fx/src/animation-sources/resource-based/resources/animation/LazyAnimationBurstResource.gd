@@ -4,7 +4,8 @@ extends Resource
 
 
 export var _duration = 1.0
-export var _wobble = 10.0
+export var _period = 10.0
+export var _amplitude = 0.0
 
 export var _fx : Resource setget _set_fx
 
@@ -18,7 +19,10 @@ func animation():
 
 	return LazyAnimation.new(
 		fx,
-		StepEaseOutElastic.new(ScalarRef.new(self, "_wobble")),
+		StepEaseOutElastic.new(
+			ScalarRef.new(self, "_period"), 
+			ScalarRef.new(self, "_amplitude")
+		),
 		ScalarRef.new(self, "_duration")
 	)
 

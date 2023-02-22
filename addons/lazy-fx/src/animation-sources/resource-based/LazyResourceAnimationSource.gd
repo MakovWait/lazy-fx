@@ -3,13 +3,17 @@ extends "res://addons/lazy-fx/src/core/player/LazyAnimationSourceBase.gd"
 
 export var _reset : bool setget _editor_trigger_reset
 export var _resource : Resource setget _set_resource
+export var _speed_scale = 1.0
 
 
 func _animation():
 	if _resource_is_invalid(_resource):
 		return LazyAnimationEmpty.new()
 	else:
-		return _resource.animation()
+		return LazyAnimationScaled.new(
+			_resource.animation(),
+			ScalarRef.new(self, "_speed_scale")
+		)
 
 
 func _resource_is_invalid(x):
