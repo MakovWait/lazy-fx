@@ -22,7 +22,7 @@ func _enter_tree():
 		preload("res://addons/lazy-fx/icons/AutoPlay.svg")
 	)
 	add_custom_type(
-		"LazySprite", 
+		"LazyFxSprite", 
 		"Sprite", 
 		preload("res://addons/lazy-fx/src/core/targets/lazy-fx-sprite/LazyFxSprite.gd"),
 		preload("res://addons/lazy-fx/icons/LazySprite2D.svg")
@@ -33,4 +33,4 @@ func _exit_tree():
 	remove_custom_type("LazyAnimationPlayer")
 	remove_custom_type("LazyResourceAnimationSource")
 	remove_custom_type("LazyAutoPlay")
-	remove_custom_type("LazySprite")
+	remove_custom_type("LazyFxSprite")

@@ -2,19 +2,21 @@ class_name FxPulse
 extends Reference
 
 
-var _intensity
+var _from
+var _to
 var _color
 
 
-func _init(intensity, color):
-	self._intensity = FxUtils.scalar_of(intensity)
+func _init(from, to, color):
+	self._from = FxUtils.scalar_of(from)
+	self._to = FxUtils.scalar_of(to)
 	self._color = FxUtils.scalar_of(color)
 
 
 func apply(target, x):
 	target.set_fx_value(
 		"material:shader_param/blink_progress",
-		lerp(0.0, _intensity.value(), x)
+		lerp(_from.value(), _to.value(), x)
 	)
 	
 	target.set_fx_value(
