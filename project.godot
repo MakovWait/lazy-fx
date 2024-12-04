@@ -6,213 +6,23 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[ {
-"base": "Reference",
-"class": "FxBurstValue",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/fx/FxBurstValue.gd"
-}, {
-"base": "Reference",
-"class": "FxComposed",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/fx/FxComposed.gd"
-}, {
-"base": "Reference",
-"class": "FxEmpty",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/fx/FxEmpty.gd"
-}, {
-"base": "Reference",
-"class": "FxPulse",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/fx/FxPulse.gd"
-}, {
-"base": "Reference",
-"class": "FxSetLerpValue",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/fx/FxSetLerpValue.gd"
-}, {
-"base": "Reference",
-"class": "FxShake",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/fx/FxShake.gd"
-}, {
-"base": "Reference",
-"class": "FxUtils",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/Utils.gd"
-}, {
-"base": "Reference",
-"class": "LazyAnimation",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/LazyAnimation.gd"
-}, {
-"base": "Resource",
-"class": "LazyAnimationBurstResource",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/animation-sources/resource-based/resources/animation/LazyAnimationBurstResource.gd"
-}, {
-"base": "Reference",
-"class": "LazyAnimationComposed",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/LazyAnimationComposed.gd"
-}, {
-"base": "Resource",
-"class": "LazyAnimationComposedResource",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/animation-sources/resource-based/resources/animation/LazyAnimationComposedResource.gd"
-}, {
-"base": "Reference",
-"class": "LazyAnimationEmpty",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/LazyAnimationEmpty.gd"
-}, {
-"base": "Node",
-"class": "LazyAnimationScaled",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/LazyAnimationScaled.gd"
-}, {
-"base": "Resource",
-"class": "LazyAnimationTimedResource",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/animation-sources/resource-based/resources/animation/LazyAnimationTimedResource.gd"
-}, {
-"base": "Resource",
-"class": "LazyFxComposedResource",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/animation-sources/resource-based/resources/fx/LazyFxComposedResource.gd"
-}, {
-"base": "Resource",
-"class": "LazyFxPositionResource",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/animation-sources/resource-based/resources/fx/LazyFxPositionResource.gd"
-}, {
-"base": "Resource",
-"class": "LazyFxPulseResource",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/animation-sources/resource-based/resources/fx/LazyFxPulseResource.gd"
-}, {
-"base": "Resource",
-"class": "LazyFxRotationResource",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/animation-sources/resource-based/resources/fx/LazyFxRotationResource.gd"
-}, {
-"base": "Resource",
-"class": "LazyFxScaleResource",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/animation-sources/resource-based/resources/fx/LazyFxScaleResource.gd"
-}, {
-"base": "Resource",
-"class": "LazyFxShakeResource",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/animation-sources/resource-based/resources/fx/LazyFxShakeResource.gd"
-}, {
-"base": "Resource",
-"class": "LazyFxSkewResource",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/animation-sources/resource-based/resources/fx/LazyFxSkewResource.gd"
-}, {
-"base": "Resource",
-"class": "LazyStepResource",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/animation-sources/resource-based/resources/step/LazyStepResource.gd"
-}, {
-"base": "Reference",
-"class": "Scalar",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/scalars/Scalar.gd"
-}, {
-"base": "Scalar",
-"class": "ScalarDeg2Rad",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/scalars/ScalarDeg2Rad.gd"
-}, {
-"base": "Scalar",
-"class": "ScalarFixed",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/scalars/ScalarFixed.gd"
-}, {
-"base": "Scalar",
-"class": "ScalarRef",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/scalars/ScalarRef.gd"
-}, {
-"base": "Reference",
-"class": "StepEaseFuncRef",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/steps/ease/StepEaseFuncRef.gd"
-}, {
-"base": "Reference",
-"class": "StepEaseLerp",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/steps/ease/StepEaseLerp.gd"
-}, {
-"base": "Reference",
-"class": "StepEaseOutElastic",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/steps/ease/StepEaseOutElastic.gd"
-}, {
-"base": "Reference",
-"class": "StepTimeContinuous",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/steps/time/StepTimeContinuous.gd"
-}, {
-"base": "Reference",
-"class": "StepTimePingPong",
-"language": "GDScript",
-"path": "res://addons/lazy-fx/src/core/animations/steps/time/StepTimePingPong.gd"
-} ]
-_global_script_class_icons={
-"FxBurstValue": "",
-"FxComposed": "",
-"FxEmpty": "",
-"FxPulse": "",
-"FxSetLerpValue": "",
-"FxShake": "",
-"FxUtils": "",
-"LazyAnimation": "",
-"LazyAnimationBurstResource": "",
-"LazyAnimationComposed": "",
-"LazyAnimationComposedResource": "",
-"LazyAnimationEmpty": "",
-"LazyAnimationScaled": "",
-"LazyAnimationTimedResource": "",
-"LazyFxComposedResource": "",
-"LazyFxPositionResource": "",
-"LazyFxPulseResource": "",
-"LazyFxRotationResource": "",
-"LazyFxScaleResource": "",
-"LazyFxShakeResource": "",
-"LazyFxSkewResource": "",
-"LazyStepResource": "",
-"Scalar": "",
-"ScalarDeg2Rad": "",
-"ScalarFixed": "",
-"ScalarRef": "",
-"StepEaseFuncRef": "",
-"StepEaseLerp": "",
-"StepEaseOutElastic": "",
-"StepTimeContinuous": "",
-"StepTimePingPong": ""
-}
+config_version=5
 
 [application]
 
 config/name="lazy-fx"
+config/features=PackedStringArray("4.3")
 config/icon="res://icon.png"
 
 [display]
 
+window/stretch/mode="viewport"
 window/size/width=512
 window/size/height=300
-window/dpi/allow_hidpi=true
-window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/imrp/plugin.cfg", "res://addons/lazy-fx/plugin.cfg" )
+enabled=PackedStringArray("res://addons/expand-region/plugin.cfg", "res://addons/find-everywhere/plugin.cfg", "res://addons/lazy-fx/plugin.cfg", "res://addons/previous-tab/plugin.cfg", "res://addons/script-tabs/plugin.cfg")
 
 [gui]
 

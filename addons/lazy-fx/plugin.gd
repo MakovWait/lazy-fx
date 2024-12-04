@@ -1,36 +1,44 @@
-tool
+@tool
 extends EditorPlugin
 
 
-func _enter_tree():
-	add_custom_type(
-		"LazyAnimationPlayer", 
-		"Node", 
-		preload("res://addons/lazy-fx/src/core/player/LazyAnimationPlayer.gd"),
-		preload("res://addons/lazy-fx/icons/LazyAnimationPlayer.svg")
-	)
-	add_custom_type(
-		"LazyResourceAnimationSource", 
-		"Node", 
-		preload("res://addons/lazy-fx/src/animation-sources/resource-based/LazyResourceAnimationSource.gd"),
-		preload("res://addons/lazy-fx/icons/Animation.svg")
-	)
-	add_custom_type(
-		"LazyAutoPlay", 
-		"Node", 
-		preload("res://addons/lazy-fx/src/core/player/LazyAutoPlay.gd"),
-		preload("res://addons/lazy-fx/icons/AutoPlay.svg")
-	)
-	add_custom_type(
-		"LazyFxSprite", 
-		"Sprite", 
-		preload("res://addons/lazy-fx/src/core/targets/lazy-fx-sprite/LazyFxSprite.gd"),
-		preload("res://addons/lazy-fx/icons/LazySprite2D.svg")
-	)
+var editor: Control
+var editor_button: Button
 
 
-func _exit_tree():
-	remove_custom_type("LazyAnimationPlayer")
-	remove_custom_type("LazyResourceAnimationSource")
-	remove_custom_type("LazyAutoPlay")
-	remove_custom_type("LazyFxSprite")
+func _enter_tree() -> void:
+	editor = Button.new()
+	editor.name = "Lazy FX"
+	#scene_changed.connect(editor.update_root.unbind(1))
+	editor_button = add_control_to_bottom_panel(editor, editor.name)
+	editor_button.hide()
+
+
+func _exit_tree() -> void:
+	remove_control_from_bottom_panel(editor)
+	editor.queue_free()
+
+
+func _handles(object: Object) -> bool:
+	if object is LazyFxAnimationPlayer:
+		#editor.set_node(object)
+		pass
+	return object is LazyFxAnimation
+
+
+func _edit(object: Object) -> void:
+	#editor.edit(object)
+	pass
+
+
+func _make_visible(visible: bool) -> void:
+	editor_button.visible = visible
+	if visible:
+		make_bottom_panel_item_visible(editor)
+	elif editor.is_visible_in_tree():
+		hide_bottom_panel()
+
+
+func _save_external_data() -> void:
+	#editor.save_data()
+	pass

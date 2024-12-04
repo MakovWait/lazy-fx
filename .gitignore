@@ -1,6 +1,10 @@
 
 # Godot-specific ignores
+.godot/
 .import/
+.plugged/
+addons/*
+!addons/lazy-fx
 export.cfg
 export_presets.cfg
 
@@ -8,6 +12,39 @@ export_presets.cfg
 .mono/
 data_*/
 
-.idea/
+.idea
+.vs
 
-addons/imrp
+mono_crash*
+*.sln.DotSettings.user
+
+builds/
+/addons/resources_spreadsheet_view/*
+
+*csproj.old*
+/trash
+resource-lib.tres
+/data/assets/sfx-tmp/
+env.gd
+/screenshots
+.obsidian
+.~lock.*
+/src/Screens/Empty/*
+/tests/UnitTests/Sandbox/*
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+sandbox/
